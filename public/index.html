@@ -1,16 +1,19 @@
 <!DOCTYPE html>
+<html>
 
-<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title>Custom Journey Builder Activity</title>
-
-    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <title></title>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="vendor/salesforce-lightning-design-system/styles/salesforce-lightning-design-system.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <script type="text/javascript" src="//code.jquery.com/git/jquery-git.min.js"></script>
     <script type="text/javascript" src="js/require.js"></script>
     <script type="text/javascript">
-        (function() {
+        (function () {
             var config = {
-                baseUrl: ''
+                baseUrl: 'js'
             };
 
             var dependencies = [
@@ -20,45 +23,22 @@
             require(config, dependencies);
         })();
     </script>
-
-    <!--Styles-->
-    <style type="text/css">
-        body {
-            padding: 20px;
-            margin: 0;
-        }
-        .step {
-            display: none;
-        }
-        #step1 {
-            display: block;
-        }
-    </style>
-
 </head>
+
 <body>
-<div id="step1" class="step">
+    <div id="step1" class="step">
+        <div class="slds-grid">
 
-    Select your SMS message:
-    <select id="select1">
-        <option value="">Select an option</option>
-        <option value="someMessage">Some SMS</option>
-        <option value="anotherMessage">Another SMS</option>
-        <option value="thirdMessage">Third SMS</option>
-        <option value="unknownMessage">Unknown SMS</option>
-    </select>
+            <main class="slds-col slds-size--1-of-3 slds-p-horizontal--small">
+              <h1>Welcome to your activity!</h1>
 
-    <button id="toggleLastStep">Toggle Last Step</button>
-</div>
-<div id="step2" class="step">
-    Here's a second page with some info on it.
-</div>
-<div id="step3" class="step">
-    You chose the message: <div id="message"></div>
-</div>
-<div id="step4" class="step">
-    Hey, here's a fourth step, just for you.  Toggle this on or off from step 1.
-</div>
+            </main>
+           
+            
+
+        </div>
+
+    </div>
 </body>
-</html>
 
+</html>

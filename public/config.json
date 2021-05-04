@@ -27,21 +27,21 @@
                   "foundSignupDate": ""
               }
           ],
-          "url": "https://some-endpoint.com/execute"
+          "url": "https://journeybuilder-custom-activit.herokuapp.com/execute"
       }
   },
   "configurationArguments": {
      "save": {
-         "url": "URI/for/your/activity/save"
+         "url": "https://journeybuilder-custom-activit.herokuapp.com/activity/save"
      },
      "publish": {
-         "url": "URI/for/your/activity/publish"
+         "url": "https://journeybuilder-custom-activit.herokuapp.com/activity/publish"
      },
      "validate": {
-         "url": "URI/for/your/activity/validate"
+         "url": "https://journeybuilder-custom-activit.herokuapp.com/activity/validate"
      },
      "stop": {
-         "url": "URI/for/your/activity/stop"
+         "url": "https://journeybuilder-custom-activit.herokuapp.com/activity/stop"
      }
   },
   "wizardSteps": [

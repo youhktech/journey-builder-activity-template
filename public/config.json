@@ -1,75 +1,91 @@
 {
-    "Key": "e6719174-371c-4287-9704-3edc29862302",
-    "workflowApiVersion": "1.1",
-    "metaData": {
-        "icon": "images/icon.png",
-        "iconSmall": "images/iconSmall.png",
-        "category": "message"
-    },
-    "type": "REST",
-    "lang": {
-        "en-US": {
-            "name": "Template",
-          "description": "A Template for a custom Journey Builder activity",
-          "step1Label": "Configure Activity"
-        }
-    },
-    "arguments": {
-        "execute": {
-           "inArguments":[
-            {
-              "emailAddress": "{{InteractionDefaults.Email}}"
-          }
-           ],
-          "outArguments": [],
-          "url": "https://journeybuilder-custom-activit.herokuapp.com/journeybuilder/execute",
-           "verb": "POST",
-            "body": "",
-            "header": "",
-            "format": "json",
-            "useJwt": true,
-            "timeout": 10000
-        }
-    },
-    "configurationArguments": {
-      "applicationExtensionKey": "e6719174-371c-4287-9704-3edc29862302",
-      "save": {
-        "url": "https://journeybuilder-custom-activit.herokuapp.com/journeybuilder/save",
-          "verb": "POST",
-        "useJwt": true
-       },
-       "publish": {
-        "url": "https://journeybuilder-custom-activit.herokuapp.com/journeybuilder/publish",
-           "verb": "POST",
-        "useJwt": true
-       },
-      "stop": {
-        "url": "https://journeybuilder-custom-activit.herokuapp.com/journeybuilder/stop",
-           "verb": "POST",
-        "useJwt": true
-      },
-      "validate": {
-        "url": "https://journeybuilder-custom-activit.herokuapp.com/journeybuilder/validate",
-        "verb": "POST",
-        "useJwt": true
+  "workflowApiVersion": "1.1",
+  "metaData": {
+    "icon": "images/icon.png",
+    "iconSmall": "images/iconSmall.png",
+    "category": "message"
+  },
+  "type": "REST",
+  "lang": {
+     "en-US": {
+         "name": "REST Activity (Workflow API v1.1)",
+         "description": "An example REST activity using workflow API v1.1 format."
+     }
+  },
+  "arguments": {
+      "execute": {
+          "inArguments": [
+              {
+                  "emailAddress": "{{InteractionDefaults.Email}}"
+              },
+              {
+                  "phoneNumber": "{{Contact.Default.PhoneNumber}}"
+              }
+          ],
+          "outArguments": [
+              {
+                  "foundSignupDate": ""
+              }
+          ],
+          "url": "https://some-endpoint.com/execute"
       }
-    },
-    "wizardSteps": [
-        { "label": "Configure Activity", "key": "step1" }
-    ],
-    "userInterfaces": {
-        "configModal": {
-            "height": 400,
-            "width": 1000,
-          "fullscreen": false
-        }
-    },
-    "schema": {
-        "arguments": {
-            "execute": {
-                "inArguments": [],
-                "outArguments": []
-            }
-        }
-    }
+  },
+  "configurationArguments": {
+     "save": {
+         "url": "URI/for/your/activity/save"
+     },
+     "publish": {
+         "url": "URI/for/your/activity/publish"
+     },
+     "validate": {
+         "url": "URI/for/your/activity/validate"
+     },
+     "stop": {
+         "url": "URI/for/your/activity/stop"
+     }
+  },
+  "wizardSteps": [
+     { "label": "Step 1", "key": "step1" },
+     { "label": "Step 2", "key": "step2" },
+     { "label": "Step 3", "key": "step3" },
+     { "label": "Step 4", "key": "step4", "active": false }
+  ],
+  "userInterfaces": {
+     "configModal": {
+         "height": 200,
+         "width": 300,
+         "fullscreen": true
+     }
+  },
+  "schema": {
+      "arguments": {
+          "execute": {
+              "inArguments": [
+                  {
+                      "phoneNumber": {
+                          "dataType": "Phone",
+                          "isNullable": false,
+                          "direction": "in"   
+                      }
+                  },
+                  {
+                      "emailAddress": {
+                          "dataType": "Email",
+                          "isNullable": false,
+                          "direction": "in"
+                      }
+                  }
+              ],
+              "outArguments": [
+                  {
+                      "foundSignupDate": {
+                          "dataType": "Date",
+                          "direction": "out",
+                          "access": "visible"
+                      }
+                  }
+              ]
+          }
+      }
+  }
 }

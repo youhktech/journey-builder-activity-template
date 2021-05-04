@@ -1,4 +1,5 @@
 {
+    "Key": "e6719174-371c-4287-9704-3edc29862302",
     "workflowApiVersion": "1.1",
     "metaData": {
         "icon": "images/icon.png",
@@ -31,7 +32,6 @@
         }
     },
     "configurationArguments": {
-      "applicationExtensionKey": "e6719174-371c-4287-9704-3edc29862302",
       "save": {
         "url": "https://journeybuilder-custom-activit.herokuapp.com/journeybuilder/save",
           "verb": "POST",
